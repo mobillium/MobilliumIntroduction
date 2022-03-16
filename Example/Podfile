@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'MobilliumIntroduction_Example' do
+  pod 'MobilliumIntroduction', :path => '../'
+
+  target 'MobilliumIntroduction_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
