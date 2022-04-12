@@ -1,0 +1,16 @@
+PODS:
+  - MobilliumIntroduction (1.0.0)
+
+DEPENDENCIES:
+  - MobilliumIntroduction (from `../`)
+
+EXTERNAL SOURCES:
+  MobilliumIntroduction:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  MobilliumIntroduction: 77f590651d8691bdba9633cd03d7534a61cbc53d
+
+PODFILE CHECKSUM: 5f0248247393740a1af58e5ff9d6ce27d69e01b3
+
+COCOAPODS: 1.11.2
