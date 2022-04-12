@@ -9,7 +9,7 @@
   },
   "authors": {
     "ahmetimirze": "ahmetimirze@gmail.com",
-    "aliozancilga": "ahmetimirze@gmail.com"
+    "aliozancilga": "ali.ozan.cilga@gmail.com"
   },
   "source": {
     "git": "https://github.com/mobillium/MobilliumIntroduction.git",
@@ -21,8 +21,5 @@
   },
   "swift_versions": "5.0",
   "source_files": "Sources/MobilliumIntroduction/Classes/**/*",
-  "resources": [
-    "Sources/MobilliumIntroduction/Assets/*.xcassets"
-  ],
   "swift_version": "5.0"
 }
