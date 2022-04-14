@@ -21,5 +21,8 @@
   },
   "swift_versions": "5.0",
   "source_files": "Sources/MobilliumIntroduction/Classes/**/*",
+  "resources": [
+    "Sources/MobilliumIntroduction/Assets/*.xcassets"
+  ],
   "swift_version": "5.0"
 }
