@@ -91,6 +91,7 @@ class IntroductionCell: UICollectionViewCell {
     }
 }
 
+// MARK: - Layout
 extension IntroductionCell {
     private func draw() {
         drawStackView()
