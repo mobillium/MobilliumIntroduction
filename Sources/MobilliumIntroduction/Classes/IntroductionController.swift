@@ -78,8 +78,9 @@ public class IntroductionController: UIViewController {
     
     @objc
     private func skipButtonTapped(_ button: UIButton) {
-        buttonDelegate?.didSkipButtonTapped()
-        dismiss(animated: true)
+        dismiss(animated: true) {
+            self.buttonDelegate?.didSkipButtonTapped()
+        }
     }
     
     @objc
@@ -87,8 +88,9 @@ public class IntroductionController: UIViewController {
         if pageControl.currentPage + 1 < config.contents.count {
             collectionView.scrollToItem(at: IndexPath(item: pageControl.currentPage + 1, section: 0), at: .centeredHorizontally, animated: true)
         } else {
-            buttonDelegate?.didNextButtonTappedAtEndOfContents()
-            dismiss(animated: true)
+            dismiss(animated: true) {
+                self.buttonDelegate?.didNextButtonTappedAtEndOfContents()
+            }
         }
     }
 }
