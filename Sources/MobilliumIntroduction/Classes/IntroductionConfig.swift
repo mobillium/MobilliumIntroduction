@@ -9,10 +9,10 @@ import UIKit
 
 // MARK: - IntroductionConfig
 public struct IntroductionConfig {
-    public let contents: [Content]
-    public let skipButton: SkipButton
-    public let pageControl: PageControl
-    public let nextButton: NextButton
+    let contents: [Content]
+    let skipButton: SkipButton
+    let pageControl: PageControl
+    let nextButton: NextButton
     
     public init(contents: [Content] =
                 [
@@ -69,18 +69,18 @@ extension IntroductionConfig {
     public struct Image {
         
         /// Image, default `Rocket`
-        public var image: UIImage
+        let image: UIImage?
         
         /// Image contentMode, default `.scaleAspectFit`
-        public var contentMode: UIView.ContentMode
+        let contentMode: UIView.ContentMode
         
         /// Background color, `optional`
-        public var backgroundColor: UIColor?
+        let backgroundColor: UIColor?
         
         /// Tint color, `optional`
-        public var tintColor: UIColor?
+        let tintColor: UIColor?
         
-        public init(image: UIImage = IntroductionAssetManager.image("Rocket"),
+        public init(image: UIImage? = IntroductionAssetManager.image("Rocket"),
                     contentMode: UIView.ContentMode = .scaleAspectFit,
                     backgroundColor: UIColor? = nil,
                     tintColor: UIColor? = nil) {
@@ -98,19 +98,19 @@ extension IntroductionConfig {
     public struct Title {
         
         /// Title Text, default `Title`
-        public var text: String
+        let text: String
         
         /// Title Text font, default `.systemFont(ofSize: 24.0, weight: .semibold)`
-        public var font: UIFont
+        let font: UIFont
         
         /// Title Text color, default `UIColor(red: 41.0 / 255.0, green: 50.0 / 255.0, blue: 65.0 / 255.0, alpha: 1.0)`
-        public var textColor: UIColor
+        let textColor: UIColor
         
         /// The technique to use for wrapping and truncating the label’s text, default value is `.byClipping`
-        public var lineBreakMode: NSLineBreakMode
+        let lineBreakMode: NSLineBreakMode
         
         /// The maximum number of lines to use for rendering text., default valie is `0`
-        public var numberOfLines: Int
+        let numberOfLines: Int
         
         public init(text: String = "Title",
                     font: UIFont = .systemFont(ofSize: 24.0, weight: .semibold),
@@ -132,19 +132,19 @@ extension IntroductionConfig {
     public struct Description {
         
         /// Description Text
-        public var text: String
+        let text: String
         
         /// Description Text font, default `.systemFont(ofSize: 14.0, weight: .medium)`
-        public var font: UIFont
+        let font: UIFont
         
         /// Description Text color, default `UIColor(red: 108.0 / 255.0, green: 107.0 / 255.0, blue: 125.0 / 255.0, alpha: 1.0)`
-        public var textColor: UIColor
+        let textColor: UIColor
         
         /// The technique to use for wrapping and truncating the label’s text, default value is `.byClipping`
-        public var lineBreakMode: NSLineBreakMode
+        let lineBreakMode: NSLineBreakMode
         
         /// The maximum number of lines to use for rendering text., default valie is `0`
-        public var numberOfLines: Int
+        let numberOfLines: Int
         
         public init(text: String = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     font: UIFont = .systemFont(ofSize: 14.0, weight: .medium),
@@ -166,22 +166,22 @@ extension IntroductionConfig {
     public struct SkipButton {
         
         /// Button title, default `Skip`
-        public var title: String
+        let title: String
         
         /// Button attributedTitle, default `nil`
-        public var attributedTitle: NSAttributedString?
+        let attributedTitle: NSAttributedString?
         
         /// Button isHidden, default `false`
-        public var isHidden: Bool
+        let isHidden: Bool
         
         /// Button isHidden when last content shown, default `true`
-        public var isSkipButtonHiddenWhenLastContentShown: Bool
+        let isSkipButtonHiddenWhenLastContentShown: Bool
         
         /// Button title font, default `.systemFont(ofSize: 13.0, weight: .medium)`
-        public var font: UIFont
+        let font: UIFont
         
         /// Button title color, default `UIColor(red: 108.0 / 255.0, green: 107.0 / 255.0, blue: 125.0 / 255.0, alpha: 1.0)`
-        public var titleColor: UIColor
+        let titleColor: UIColor
         
         public init(title: String = "Skip",
                     attributedTitle: NSAttributedString? = nil,
@@ -205,31 +205,31 @@ extension IntroductionConfig {
     public struct NextButton {
         
         /// Button title, default `Next`
-        public var title: String
+        let title: String
         
         /// Button attributedTitle, default `nil`
-        public var attributedTitle: NSAttributedString?
+        let attributedTitle: NSAttributedString?
         
         /// Button last content title, default `OK`
-        public var lastTitle: String
+        let lastTitle: String
         
         /// Button lastAttributedTitle, default `nil`
-        public var lastAttributedTitle: NSAttributedString?
+        let lastAttributedTitle: NSAttributedString?
         
         /// Button isHidden, default `false`
-        public var isHidden: Bool
+        let isHidden: Bool
         
         /// Button title font, default `.systemFont(ofSize: 14.0, weight: .bold)`
-        public var font: UIFont
+        let font: UIFont
         
         /// Button title color, default `.white`
-        public var titleColor: UIColor
+        let titleColor: UIColor
         
         /// Button background color, default `UIColor(red: 0.0 / 255.0, green: 102.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0)`
-        public var backgroundColor: UIColor
+        let backgroundColor: UIColor
         
         /// Button layer.cornerRadius, default `16.0`
-        public var cornerRadius: CGFloat
+        let cornerRadius: CGFloat
         
         public init(title: String = "Next",
                     attributedTitle: NSAttributedString? = nil,
@@ -259,13 +259,13 @@ extension IntroductionConfig {
     public struct PageControl {
         
         /// PageControl currentPageIndicatorTintColor, default `UIColor(red: 0.0 / 255.0, green: 102.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0)`
-        public var currentPageIndicatorTintColor: UIColor
+        let currentPageIndicatorTintColor: UIColor
         
         /// PageControl pageIndicatorTintColor, default `UIColor(red: 0.0 / 255.0, green: 102.0 / 255.0, blue: 255.0 / 255.0, alpha: 0.4)`
-        public var pageIndicatorTintColor: UIColor
+        let pageIndicatorTintColor: UIColor
         
         /// PageControl isHidden, default `false`
-        public var isHidden: Bool
+        let isHidden: Bool
         
         public init(currentPageIndicatorTintColor: UIColor = UIColor(red: 0.0 / 255.0, green: 102.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0),
                     pageIndicatorTintColor: UIColor = UIColor(red: 0.0 / 255.0, green: 102.0 / 255.0, blue: 255.0 / 255.0, alpha: 0.4),
