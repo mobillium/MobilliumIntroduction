@@ -57,10 +57,10 @@ class IntroductionCell: UICollectionViewCell {
         drawContentStyle(content.style)
         
         switch content.style {
-        case .styleOne, .styleThree:
+        case .topImageCenterAlignmentTextContent, .bottomImageCenterAlignmentTextContent:
             titleLabel.textAlignment = .center
             descriptionLabel.textAlignment = .center
-        case .styleTwo, .styleFour:
+        case .topImageLeftAlignmentTextContent, .bottomImageLeftAlignmentTextContent:
             titleLabel.textAlignment = .left
             descriptionLabel.textAlignment = .left
         }
@@ -109,11 +109,11 @@ extension IntroductionCell {
     
     private func drawContentStyle(_ style: IntroductionConfig.ContentStyle) {
         switch style {
-        case .styleOne, .styleTwo:
+        case .topImageCenterAlignmentTextContent, .topImageLeftAlignmentTextContent:
             drawImageView()
             drawTitleLabel()
             drawDescriptionLabel()
-        case .styleThree, .styleFour:
+        case .bottomImageCenterAlignmentTextContent, .bottomImageLeftAlignmentTextContent:
             drawTitleLabel()
             drawDescriptionLabel()
             drawImageView()
