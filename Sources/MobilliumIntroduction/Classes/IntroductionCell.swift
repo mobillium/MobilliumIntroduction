@@ -47,7 +47,7 @@ class IntroductionCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        draw()
+        addSubviews()
     }
     
     required init?(coder: NSCoder) {
@@ -55,7 +55,7 @@ class IntroductionCell: UICollectionViewCell {
     }
     
     func configure(with content: IntroductionConfig.Content) {
-        drawContentStyle(content.style)
+        configureContentStyle(content.style)
         
         switch content.style {
         case .topImageCenterAlignmentTextContent, .bottomImageCenterAlignmentTextContent:
@@ -95,11 +95,11 @@ class IntroductionCell: UICollectionViewCell {
 // MARK: - Layout
 extension IntroductionCell {
     
-    private func draw() {
-        drawStackView()
+    private func addSubviews() {
+        addStackView()
     }
     
-    private func drawStackView() {
+    private func addStackView() {
         contentView.addSubview(stackView)
         
         NSLayoutConstraint.activate([
@@ -110,33 +110,33 @@ extension IntroductionCell {
         ])
     }
     
-    private func drawContentStyle(_ style: IntroductionConfig.ContentStyle) {
+    private func configureContentStyle(_ style: IntroductionConfig.ContentStyle) {
         switch style {
         case .topImageCenterAlignmentTextContent, .topImageLeftAlignmentTextContent:
-            drawImageView()
-            drawTitleLabel()
-            drawDescriptionLabel()
+            addImageView()
+            addTitleLabel()
+            addDescriptionLabel()
         case .bottomImageCenterAlignmentTextContent, .bottomImageLeftAlignmentTextContent:
-            drawTitleLabel()
-            drawDescriptionLabel()
-            drawImageView()
+            addTitleLabel()
+            addDescriptionLabel()
+            addImageView()
         }
-        drawBlankView()
+        addBlankView()
     }
     
-    private func drawImageView() {
+    private func addImageView() {
         stackView.addArrangedSubview(imageView)
     }
     
-    private func drawTitleLabel() {
+    private func addTitleLabel() {
         stackView.addArrangedSubview(titleLabel)
     }
     
-    private func drawDescriptionLabel() {
+    private func addDescriptionLabel() {
         stackView.addArrangedSubview(descriptionLabel)
     }
     
-    private func drawBlankView() {
+    private func addBlankView() {
         stackView.addArrangedSubview(UIView())
     }
 }
