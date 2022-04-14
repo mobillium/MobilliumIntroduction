@@ -95,6 +95,7 @@ public class IntroductionController: UIViewController {
 
 // MARK: - Layout
 extension IntroductionController {
+    
     private func addSubviews() {
         addSkipButton()
         addNextButton()
@@ -151,6 +152,7 @@ extension IntroductionController {
 
 // MARK: - Configure
 extension IntroductionController {
+    
     private func configureContents() {
         configureSkipButton()
         configureNextButton()
@@ -187,6 +189,7 @@ extension IntroductionController {
 
 // MARK: - UICollectionViewDataSource
 extension IntroductionController: UICollectionViewDataSource {
+    
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return config.contents.count
     }
@@ -208,6 +211,7 @@ extension IntroductionController: UICollectionViewDataSource {
 
 // MARK: - UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
 extension IntroductionController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }
@@ -223,6 +227,7 @@ extension IntroductionController: UICollectionViewDelegate, UICollectionViewDele
 
 // MARK: - UIScrollViewDelegate
 extension IntroductionController: UIScrollViewDelegate {
+    
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageIndex = Int(round(scrollView.contentOffset.x/view.frame.width))
         pageControl.currentPage = pageIndex

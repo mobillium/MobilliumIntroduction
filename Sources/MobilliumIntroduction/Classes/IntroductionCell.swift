@@ -9,6 +9,7 @@ import UIKit
 
 // MARK: - IntroductionCell
 class IntroductionCell: UICollectionViewCell {
+    
     private let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -93,6 +94,7 @@ class IntroductionCell: UICollectionViewCell {
 
 // MARK: - Layout
 extension IntroductionCell {
+    
     private func draw() {
         drawStackView()
     }

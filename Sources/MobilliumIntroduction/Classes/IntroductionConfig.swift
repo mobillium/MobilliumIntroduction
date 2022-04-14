@@ -9,6 +9,7 @@ import UIKit
 
 // MARK: - IntroductionConfig
 public struct IntroductionConfig {
+    
     let contents: [Content]
     let skipButton: SkipButton
     let pageControl: PageControl
