@@ -80,7 +80,7 @@ extension IntroductionConfig {
         /// Tint color, `optional`
         let tintColor: UIColor?
         
-        public init(image: UIImage? = IntroductionAssetManager.image("Rocket"),
+        public init(image: UIImage? = nil,
                     contentMode: UIView.ContentMode = .scaleAspectFit,
                     backgroundColor: UIColor? = nil,
                     tintColor: UIColor? = nil) {

@@ -46,7 +46,16 @@ class ViewController: UIViewController {
     
     @objc
     private func showBasicIntroduction(_ sender: UIButton) {
-        let introductionController = IntroductionController()
+        let introductionController = IntroductionController(
+            config: IntroductionConfig(
+                contents: [
+                    IntroductionConfig.Content(image: IntroductionConfig.Image(image: UIImage(named: "BasicImage")), style: .topImageCenterAlignmentTextContent),
+                    IntroductionConfig.Content(image: IntroductionConfig.Image(image: UIImage(named: "BasicImage")), style: .topImageLeftAlignmentTextContent),
+                    IntroductionConfig.Content(image: IntroductionConfig.Image(image: UIImage(named: "BasicImage")), style: .bottomImageCenterAlignmentTextContent),
+                    IntroductionConfig.Content(image: IntroductionConfig.Image(image: UIImage(named: "BasicImage")), style: .bottomImageLeftAlignmentTextContent)
+                ]
+            )
+        )
         present(introductionController, animated: true)
     }
     
