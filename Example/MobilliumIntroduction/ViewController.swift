@@ -150,7 +150,11 @@ extension ViewController {
 
 // MARK: - IntroductionControllerPageDelegate
 extension ViewController: IntroductionControllerPageDelegate {
-    func introductionController(_ controller: IntroductionController, didMoveToPage index: Int) {
+    func introductionController(_ controller: IntroductionController, willDisplay index: Int) {
+        // do something
+    }
+    
+    func introductionController(_ controller: IntroductionController, didEndDisplaying index: Int) {
         // do something
     }
 }

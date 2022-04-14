@@ -9,7 +9,8 @@ import UIKit
 
 // MARK: - IntroductionControllerPageDelegate
 public protocol IntroductionControllerPageDelegate: AnyObject {
-    func introductionController(_ controller: IntroductionController, didMoveToPage index: Int)
+    func introductionController(_ controller: IntroductionController, willDisplay index: Int)
+    func introductionController(_ controller: IntroductionController, didEndDisplaying index: Int)
 }
 
 // MARK: - IntroductionControllerButtonDelegate
@@ -196,8 +197,12 @@ extension IntroductionController: UICollectionViewDataSource {
         return cell
     }
     
+    public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        pageDelegate?.introductionController(self, willDisplay: indexPath.item)
+    }
+    
     public func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        pageDelegate?.introductionController(self, didMoveToPage: indexPath.item)
+        pageDelegate?.introductionController(self, didEndDisplaying: indexPath.item)
     }
 }
 

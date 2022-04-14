@@ -117,7 +117,8 @@ func didNextButtonTappedAtEndOfContents()
 
 #####IntroductionControllerPageDelegate:
 ```swift
-func introductionController(_ controller: IntroductionController, didMoveToPage index: Int)
+func introductionController(_ controller: IntroductionController, willDisplay index: Int)
+func introductionController(_ controller: IntroductionController, didEndDisplaying index: Int)
 ```
 
 ## License
