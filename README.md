@@ -60,6 +60,10 @@ For each content, you can choose one of four content styles.
     }
 ```
 
+| Basic | Advanced |
+| --- | --- |
+| ![Basic](Resources/basic.gif) | ![Advanced](Resources/advanced.gif) |
+
 #####Basic usage for preview:
 ```swift
     let introductionController = IntroductionController()
