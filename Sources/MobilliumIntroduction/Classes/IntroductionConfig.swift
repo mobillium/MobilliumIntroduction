@@ -17,10 +17,10 @@ public struct IntroductionConfig {
     
     public init(contents: [Content] =
                 [
-                    Content(style: .topImageCenterAlignmentTextContent),
-                    Content(style: .topImageLeftAlignmentTextContent),
-                    Content(style: .bottomImageCenterAlignmentTextContent),
-                    Content(style: .bottomImageLeftAlignmentTextContent)
+                    Content(style: .topImageCenterAlignedText),
+                    Content(style: .topImageLeftAlignedText),
+                    Content(style: .bottomImageCenterAlignedText),
+                    Content(style: .bottomImageLeftAlignedText)
                 ],
                 skipButton: SkipButton = SkipButton(),
                 pageControl: PageControl = PageControl(),
@@ -36,10 +36,10 @@ public struct IntroductionConfig {
 extension IntroductionConfig {
     
     public enum ContentStyle: CaseIterable {
-        case topImageCenterAlignmentTextContent
-        case topImageLeftAlignmentTextContent
-        case bottomImageCenterAlignmentTextContent
-        case bottomImageLeftAlignmentTextContent
+        case topImageCenterAlignedText
+        case topImageLeftAlignedText
+        case bottomImageCenterAlignedText
+        case bottomImageLeftAlignedText
     }
 }
 
@@ -55,7 +55,7 @@ extension IntroductionConfig {
         public init(title: Title = Title(),
                     description: Description = Description(),
                     image: Image = Image(),
-                    style: ContentStyle = .topImageCenterAlignmentTextContent) {
+                    style: ContentStyle = .topImageCenterAlignedText) {
             self.title = title
             self.description = description
             self.image = image

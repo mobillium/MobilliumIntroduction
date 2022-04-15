@@ -49,10 +49,10 @@ class ViewController: UIViewController {
         let introductionController = IntroductionController(
             config: IntroductionConfig(
                 contents: [
-                    IntroductionConfig.Content(image: IntroductionConfig.Image(image: UIImage(named: "BasicImage")), style: .topImageCenterAlignmentTextContent),
-                    IntroductionConfig.Content(image: IntroductionConfig.Image(image: UIImage(named: "BasicImage")), style: .topImageLeftAlignmentTextContent),
-                    IntroductionConfig.Content(image: IntroductionConfig.Image(image: UIImage(named: "BasicImage")), style: .bottomImageCenterAlignmentTextContent),
-                    IntroductionConfig.Content(image: IntroductionConfig.Image(image: UIImage(named: "BasicImage")), style: .bottomImageLeftAlignmentTextContent)
+                    IntroductionConfig.Content(image: IntroductionConfig.Image(image: UIImage(named: "BasicImage")), style: .topImageCenterAlignedText),
+                    IntroductionConfig.Content(image: IntroductionConfig.Image(image: UIImage(named: "BasicImage")), style: .topImageLeftAlignedText),
+                    IntroductionConfig.Content(image: IntroductionConfig.Image(image: UIImage(named: "BasicImage")), style: .bottomImageCenterAlignedText),
+                    IntroductionConfig.Content(image: IntroductionConfig.Image(image: UIImage(named: "BasicImage")), style: .bottomImageLeftAlignedText)
                 ]
             )
         )
