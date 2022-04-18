@@ -33,17 +33,12 @@ jobs:
          echo "Creating Runtimes folder if needed..."
          sudo mkdir -p /Library/Developer/CoreSimulator/Profiles/Runtimes
          echo "Creating symlink of the iOS 14.8 runtime..."
-         sudo ln -s 
-/Applications/Xcode_$XC_VERSION.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime 
-/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS\ 14.8.simruntime
+         sudo ln -s /Applications/Xcode_$XC_VERSION.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime /Library/Developer/CoreSimulator/Profiles/Runtimes/iOS\ 14.8.simruntime
      - name: Link to 15.4 Simulators
        run: |
          echo "Creating Runtimes folder if needed..."
          sudo mkdir -p /Library/Developer/CoreSimulator/Profiles/Runtimes
          echo "Creating symlink of the iOS 15.4 runtime..."
-         sudo ln -s 
-/Applications/Xcode_$XC_VERSION.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime 
-/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS\ 15.4.simruntime
+         sudo ln -s /Applications/Xcode_$XC_VERSION.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime /Library/Developer/CoreSimulator/Profiles/Runtimes/iOS\ 15.4.simruntime
      - name: Run Unit and UI Tests
-       run: /usr/bin/xcodebuild test -workspace "$XC_WORKSPACE" -scheme 
-"$XC_SCHEME" -destination '${{ matrix.destination }}'
+       run: /usr/bin/xcodebuild test -workspace "$XC_WORKSPACE" -scheme "$XC_SCHEME" -destination '${{ matrix.destination }}'
