@@ -2,6 +2,7 @@
 
 [![CI Status](https://img.shields.io/travis/mobillium/MobilliumIntroduction.svg?style=flat)](https://travis-ci.org/mobillium/MobilliumIntroduction)
 [![Version](https://img.shields.io/cocoapods/v/MobilliumIntroduction.svg?style=flat)](https://cocoapods.org/pods/MobilliumIntroduction)
+[![Swift Package Manager](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)]
 [![License](https://img.shields.io/cocoapods/l/MobilliumIntroduction.svg?style=flat)](https://cocoapods.org/pods/MobilliumIntroduction)
 [![Platform](https://img.shields.io/cocoapods/p/MobilliumIntroduction.svg?style=flat)](https://cocoapods.org/pods/MobilliumIntroduction)
 
