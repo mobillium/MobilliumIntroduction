@@ -110,19 +110,24 @@ extension IntroductionConfig {
         /// The technique to use for wrapping and truncating the label’s text, default value is `.byClipping`
         let lineBreakMode: NSLineBreakMode
         
-        /// The maximum number of lines to use for rendering text., default valie is `0`
+        /// Title attributedText, if set, the label ignores the properties above. default `nil`
+        let attributedText: NSAttributedString?
+        
+        /// The maximum number of lines to use for rendering text, default valie is `0`
         let numberOfLines: Int
         
         public init(text: String = "Title",
                     font: UIFont = .systemFont(ofSize: 24.0, weight: .semibold),
                     textColor: UIColor = UIColor(red: 41.0 / 255.0, green: 50.0 / 255.0, blue: 65.0 / 255.0, alpha: 1.0),
                     lineBreakMode: NSLineBreakMode = .byClipping,
-                    numberOfLines: Int = 0) {
+                    numberOfLines: Int = 0,
+                    attributedText: NSAttributedString? = nil) {
             self.text = text
             self.font = font
             self.textColor = textColor
             self.lineBreakMode = lineBreakMode
             self.numberOfLines = numberOfLines
+            self.attributedText = attributedText
         }
     }
 }
@@ -144,19 +149,24 @@ extension IntroductionConfig {
         /// The technique to use for wrapping and truncating the label’s text, default value is `.byClipping`
         let lineBreakMode: NSLineBreakMode
         
-        /// The maximum number of lines to use for rendering text., default valie is `0`
+        /// Description attributedText, if set, the label ignores the properties above. default `nil`
+        let attributedText: NSAttributedString?
+        
+        /// The maximum number of lines to use for rendering text, default valie is `0`
         let numberOfLines: Int
         
         public init(text: String = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     font: UIFont = .systemFont(ofSize: 14.0, weight: .medium),
                     textColor: UIColor = UIColor(red: 108.0 / 255.0, green: 107.0 / 255.0, blue: 125.0 / 255.0, alpha: 1.0),
                     lineBreakMode: NSLineBreakMode = .byClipping,
-                    numberOfLines: Int = 0) {
+                    numberOfLines: Int = 0,
+                    attributedText: NSAttributedString? = nil) {
             self.text = text
             self.font = font
             self.textColor = textColor
             self.lineBreakMode = lineBreakMode
             self.numberOfLines = numberOfLines
+            self.attributedText = attributedText
         }
     }
 }

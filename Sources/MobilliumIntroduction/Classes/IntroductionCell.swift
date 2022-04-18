@@ -66,17 +66,25 @@ class IntroductionCell: UICollectionViewCell {
             descriptionLabel.textAlignment = .left
         }
         
-        titleLabel.text = content.title.text
-        titleLabel.font = content.title.font
-        titleLabel.textColor = content.title.textColor
-        titleLabel.numberOfLines = content.title.numberOfLines
-        titleLabel.lineBreakMode = content.title.lineBreakMode
+        if let titleAttributedText = content.title.attributedText {
+            titleLabel.attributedText = titleAttributedText
+        } else {
+            titleLabel.text = content.title.text
+            titleLabel.font = content.title.font
+            titleLabel.textColor = content.title.textColor
+            titleLabel.numberOfLines = content.title.numberOfLines
+            titleLabel.lineBreakMode = content.title.lineBreakMode
+        }
         
-        descriptionLabel.text = content.description.text
-        descriptionLabel.font = content.description.font
-        descriptionLabel.textColor = content.description.textColor
-        descriptionLabel.numberOfLines = content.description.numberOfLines
-        descriptionLabel.lineBreakMode = content.description.lineBreakMode
+        if let descriptionAttributedText = content.description.attributedText {
+            descriptionLabel.attributedText = descriptionAttributedText
+        } else {
+            descriptionLabel.text = content.description.text
+            descriptionLabel.font = content.description.font
+            descriptionLabel.textColor = content.description.textColor
+            descriptionLabel.numberOfLines = content.description.numberOfLines
+            descriptionLabel.lineBreakMode = content.description.lineBreakMode
+        }
         
         imageView.image = content.image.image
         imageView.contentMode = content.image.contentMode
