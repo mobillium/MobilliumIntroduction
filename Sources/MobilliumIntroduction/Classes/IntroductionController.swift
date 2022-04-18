@@ -179,6 +179,11 @@ extension IntroductionController {
         nextButton.titleLabel?.font = config.nextButton.font
         nextButton.layer.cornerRadius = config.nextButton.cornerRadius
         nextButton.backgroundColor = config.nextButton.backgroundColor
+        
+        if let attributedTitle = config.nextButton.attributedTitle {
+            nextButton.setAttributedTitle(attributedTitle, for: .normal)
+        }
+        
         nextButton.isHidden = config.nextButton.isHidden
     }
     
@@ -237,12 +242,20 @@ extension IntroductionController: UIScrollViewDelegate {
             if config.skipButton.isSkipButtonHiddenWhenLastContentShown {
                 skipButton.isHidden = true
             }
-            nextButton.setTitle(config.nextButton.lastTitle, for: .normal)
+            if let lastAttributedTitle = config.nextButton.lastAttributedTitle {
+                nextButton.setAttributedTitle(lastAttributedTitle, for: .normal)
+            } else {
+                nextButton.setTitle(config.nextButton.lastTitle, for: .normal)
+            }
         } else {
             if config.skipButton.isSkipButtonHiddenWhenLastContentShown {
                 skipButton.isHidden = false
             }
-            nextButton.setTitle(config.nextButton.title, for: .normal)
+            if let attributedTitle = config.nextButton.attributedTitle {
+                nextButton.setAttributedTitle(attributedTitle, for: .normal)
+            } else {
+                nextButton.setTitle(config.nextButton.title, for: .normal)
+            }
         }
     }
 }
