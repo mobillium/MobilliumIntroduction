@@ -1,6 +1,6 @@
 use_frameworks!
 
-platform :ios, '9.0'
+platform :ios, '11.0'
 
 target 'MobilliumIntroduction_Example' do
   pod 'MobilliumIntroduction', :path => '../'

@@ -1,0 +1,6 @@
+framework module MobilliumIntroduction {
+  umbrella header "MobilliumIntroduction-umbrella.h"
+
+  export *
+  module * { export * }
+}

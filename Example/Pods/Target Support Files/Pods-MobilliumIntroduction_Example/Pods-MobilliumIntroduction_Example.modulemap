@@ -1,0 +1,6 @@
+framework module Pods_MobilliumIntroduction_Example {
+  umbrella header "Pods-MobilliumIntroduction_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
