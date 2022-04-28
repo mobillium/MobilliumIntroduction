@@ -2,7 +2,7 @@
 
 [![Build Status](https://github.com/mobillium/MobilliumIntroduction/actions/workflows/ci.yml/badge.svg)](https://github.com/mobillium/MobilliumIntroduction/actions/workflows/ci.yml)
 [![Version](https://img.shields.io/cocoapods/v/MobilliumIntroduction.svg?style=flat)](https://cocoapods.org/pods/MobilliumIntroduction)
-[![Swift Package Manager](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)]
+[![Swift Package Manager](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)
 [![License](https://img.shields.io/cocoapods/l/MobilliumIntroduction.svg?style=flat)](https://cocoapods.org/pods/MobilliumIntroduction)
 [![Platform](https://img.shields.io/cocoapods/p/MobilliumIntroduction.svg?style=flat)](https://cocoapods.org/pods/MobilliumIntroduction)
 
