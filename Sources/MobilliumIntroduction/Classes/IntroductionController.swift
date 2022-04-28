@@ -7,23 +7,25 @@
 
 import UIKit
 
-// MARK: - IntroductionControllerPageDelegate
-public protocol IntroductionControllerPageDelegate: AnyObject {
+// MARK: - IntroductionControllerDelegate
+public protocol IntroductionControllerDelegate: AnyObject {
     func introductionController(_ controller: IntroductionController, willDisplay index: Int)
     func introductionController(_ controller: IntroductionController, didEndDisplaying index: Int)
-}
-
-// MARK: - IntroductionControllerButtonDelegate
-public protocol IntroductionControllerButtonDelegate: AnyObject {
     func didSkipButtonTapped()
     func didNextButtonTappedAtEndOfContents()
+}
+
+public extension IntroductionControllerDelegate {
+    func introductionController(_ controller: IntroductionController, willDisplay index: Int) { }
+    func introductionController(_ controller: IntroductionController, didEndDisplaying index: Int) { }
+    func didSkipButtonTapped() { }
+    func didNextButtonTappedAtEndOfContents() { }
 }
 
 // MARK: - IntroductionController
 public class IntroductionController: UIViewController {
     
-    public weak var pageDelegate: IntroductionControllerPageDelegate?
-    public weak var buttonDelegate: IntroductionControllerButtonDelegate?
+    public weak var delegate: IntroductionControllerDelegate?
     
     private let pageControl: UIPageControl = {
         let pageControl = UIPageControl()
@@ -79,7 +81,7 @@ public class IntroductionController: UIViewController {
     @objc
     private func skipButtonTapped(_ button: UIButton) {
         dismiss(animated: true) {
-            self.buttonDelegate?.didSkipButtonTapped()
+            self.delegate?.didSkipButtonTapped()
         }
     }
     
@@ -89,7 +91,7 @@ public class IntroductionController: UIViewController {
             collectionView.scrollToItem(at: IndexPath(item: pageControl.currentPage + 1, section: 0), at: .centeredHorizontally, animated: true)
         } else {
             dismiss(animated: true) {
-                self.buttonDelegate?.didNextButtonTappedAtEndOfContents()
+                self.delegate?.didNextButtonTappedAtEndOfContents()
             }
         }
     }
@@ -208,11 +210,11 @@ extension IntroductionController: UICollectionViewDataSource {
     }
     
     public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        pageDelegate?.introductionController(self, willDisplay: indexPath.item)
+        delegate?.introductionController(self, willDisplay: indexPath.item)
     }
     
     public func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        pageDelegate?.introductionController(self, didEndDisplaying: indexPath.item)
+        delegate?.introductionController(self, didEndDisplaying: indexPath.item)
     }
 }
 

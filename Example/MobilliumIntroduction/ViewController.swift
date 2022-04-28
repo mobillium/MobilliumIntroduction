@@ -107,8 +107,7 @@ class ViewController: UIViewController {
         )
         
         let introductionController = IntroductionController(config: config)
-        introductionController.pageDelegate = self
-        introductionController.buttonDelegate = self
+        introductionController.delegate = self
         present(introductionController, animated: true)
     }
 }
@@ -157,23 +156,8 @@ extension ViewController {
     }
 }
 
-// MARK: - IntroductionControllerPageDelegate
-extension ViewController: IntroductionControllerPageDelegate {
-    func introductionController(_ controller: IntroductionController, willDisplay index: Int) {
-        // do something
-    }
-    
-    func introductionController(_ controller: IntroductionController, didEndDisplaying index: Int) {
-        // do something
-    }
-}
-
-// MARK: - IntroductionControllerButtonDelegate
-extension ViewController: IntroductionControllerButtonDelegate {
-    func didNextButtonTappedAtEndOfContents() {
-        // do something
-    }
-    
+// MARK: - IntroductionControllerDelegate
+extension ViewController: IntroductionControllerDelegate {
     func didSkipButtonTapped() {
         // do something
     }

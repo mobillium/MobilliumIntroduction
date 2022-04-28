@@ -2,7 +2,7 @@
 
 [![Build Status](https://github.com/mobillium/MobilliumIntroduction/actions/workflows/ci.yml/badge.svg)](https://github.com/mobillium/MobilliumIntroduction/actions/workflows/ci.yml)
 [![Version](https://img.shields.io/cocoapods/v/MobilliumIntroduction.svg?style=flat)](https://cocoapods.org/pods/MobilliumIntroduction)
-[![Swift Package Manager](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)]
+[![Swift Package Manager](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)
 [![License](https://img.shields.io/cocoapods/l/MobilliumIntroduction.svg?style=flat)](https://cocoapods.org/pods/MobilliumIntroduction)
 [![Platform](https://img.shields.io/cocoapods/p/MobilliumIntroduction.svg?style=flat)](https://cocoapods.org/pods/MobilliumIntroduction)
 
@@ -40,7 +40,7 @@ dependencies: [
 ## Usage
 MobilliumIntroduction comes with these configs which you can customize for your requirements.
 
-Create own IntroductionController and get result from `IntroductionControllerButtonDelegate` and `IntroductionControllerPageDelegate`.
+Create own IntroductionController and get result from `IntroductionControllerDelegate`.
 
 - Content
 - ContentStyle
@@ -65,13 +65,13 @@ For each content, you can choose one of four content styles.
 | --- | --- |
 | ![Basic](Resources/basic.gif) | ![Advanced](Resources/advanced.gif) |
 
-#####Basic usage for preview:
+##### Basic usage for preview:
 ```swift
     let introductionController = IntroductionController()
     present(introductionController, animated: true)
 ```
 
-#####Advanced usage:
+##### Advanced usage:
 ```swift
     let titlesAndDescriptions: [String: String] = [
         "Make Great Things": "We build products that are fast, effortless to use and aesthetically pleased. We roll up our sleeves and create things worthy of our clients’ and users’ time.",
@@ -119,21 +119,16 @@ For each content, you can choose one of four content styles.
     )
 
     let introductionController = IntroductionController(config: config)
-    introductionController.pageDelegate = self
-    introductionController.buttonDelegate = self
+    introductionController.delegate = self
     present(introductionController, animated: true)
 ```
 
-#####IntroductionControllerButtonDelegate:
-```swift
-    func didSkipButtonTapped()
-    func didNextButtonTappedAtEndOfContents()
-```
-
-#####IntroductionControllerPageDelegate:
+##### IntroductionControllerDelegate:
 ```swift
     func introductionController(_ controller: IntroductionController, willDisplay index: Int)
     func introductionController(_ controller: IntroductionController, didEndDisplaying index: Int)
+    func didSkipButtonTapped()
+    func didNextButtonTappedAtEndOfContents()
 ```
 
 ## License
